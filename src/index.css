@@ -1,0 +1,730 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * BLACKBOOK — SAKURA DREAMVERSE DESIGN SYSTEM
+ * Dual Art-Directed World Themes:
+ *   Light: Daylight Sakura Sanctuary (Vanilla Washi, Blossom Rose, Lavender Mist, Powder Sky, Hinoki Timber, Botanical Mint)
+ *   Dark:  Magical Yozakura Night Garden (Twilight Indigo-Plum, Moonlight Lavender, Lantern Amber, Luminous Sakura, Pond Jade)
+ */
+
+@layer base {
+  :root {
+    --radius: 0.9rem;
+
+    /* ── Daylight Sakura Sanctuary (Light Mode) ── */
+    --background: 34 45% 96.5%;          /* Vanilla Morning Washi #FAF5EE */
+    --foreground: 346 24% 16%;           /* Deep Warm Cocoa Ink #331F24 */
+    --card: 35 60% 98.8%;                /* Translucent Porcelain Washi #FFFDF9 */
+    --card-foreground: 346 24% 16%;
+    --popover: 36 55% 99%;
+    --popover-foreground: 346 24% 16%;
+
+    --primary: 341 54% 48%;              /* Craft Lacquer Rose #BD3963 (WCAG AA/AAA white ink) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 266 44% 94%;            /* Soft Lavender Veil #EFEAF8 */
+    --secondary-foreground: 266 28% 26%;
+
+    --muted: 33 28% 92%;                 /* Sunlit Tatami Linen #EFEAE2 */
+    --muted-foreground: 346 14% 39%;     /* Cocoa Stone Taupe #71565D */
+
+    --accent: 344 58% 92%;               /* Cherry Petal Blush #F7E0E8 */
+    --accent-foreground: 346 24% 16%;
+
+    --destructive: 0 65% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 339 24% 83%;               /* Warm Timber-Rose Hairline #DFCDD4 */
+    --input: 36 42% 97%;                 /* Ivory Writing Field #FAF6F0 */
+    --ring: 341 54% 48%;
+
+    /* ── Dreamverse World Palette Tokens ── */
+    --dream-blossom: 341 78% 81%;        /* #F4A7C1 */
+    --dream-lavender: 262 56% 74%;       /* #B59CE2 */
+    --dream-sky: 205 68% 86%;            /* #C3E1F5 */
+    --dream-mint: 156 38% 42%;           /* #429472 */
+    --dream-peach: 24 85% 84%;           /* #FAD2B4 */
+    --dream-gold: 37 74% 52%;            /* #DFA02B */
+    --dream-timber: 27 36% 64%;          /* #C49E82 */
+    --dream-night: 256 38% 12%;
+
+    --chart-1: 341 54% 48%;
+    --chart-2: 262 52% 62%;
+    --chart-3: 205 62% 54%;
+    --chart-4: 156 38% 42%;
+    --chart-5: 37 74% 52%;
+
+    --sidebar-background: 33 36% 94.5%;  /* Hinoki Paper Sanctuary #F6F0E8 */
+    --sidebar-foreground: 346 24% 16%;
+    --sidebar-primary: 341 54% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 344 45% 91%;
+    --sidebar-accent-foreground: 346 24% 16%;
+    --sidebar-border: 29 24% 84%;
+    --sidebar-ring: 341 54% 48%;
+
+    --knowledge-link: 341 58% 43%;
+    --surface: 34 38% 95%;
+    --surface-hover: 344 42% 92%;
+    --surface-active: 343 48% 88%;
+
+    --shadow-card:
+      0 2px 4px rgba(58, 34, 42, 0.05),
+      0 14px 34px -10px rgba(122, 68, 92, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    --shadow-hover:
+      0 6px 14px rgba(58, 34, 42, 0.08),
+      0 22px 46px -12px rgba(132, 66, 98, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    --dur-fast: 140ms;
+    --dur-std: 220ms;
+    --dur-expr: 340ms;
+    --dur-enter: 460ms;
+    --ease-botanical: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-tactile: cubic-bezier(0.2, 0, 0, 1);
+    --accent-text-gradient: linear-gradient(118deg, #A32853 0%, #6D469C 52%, #C94D77 100%);
+  }
+
+  .dark {
+    --radius: 0.9rem;
+
+    /* ── Magical Yozakura Night Garden (Rich Indigo-Plum Twilight, NOT Flat Black) ── */
+    --background: 254 34% 10%;           /* Deep Yozakura Indigo-Plum #141022 */
+    --foreground: 332 24% 95%;           /* Moonlit Blossom Pearl #F6EDF1 */
+    --card: 255 32% 14.5%;               /* Evening Lacquer Pavilion #1E1831 */
+    --card-foreground: 332 24% 95%;
+    --popover: 256 34% 12.5%;            /* Twilight Amethyst Glass #1A142B */
+    --popover-foreground: 332 24% 95%;
+
+    --primary: 340 72% 76%;              /* Luminous Sakura Glow #EF95B4 */
+    --primary-foreground: 262 38% 11%;   /* Deep Twilight Ink #191127 */
+    --secondary: 260 32% 21%;            /* Moonlit Wisteria Veil #2F2447 */
+    --secondary-foreground: 332 24% 94%;
+
+    --muted: 256 26% 18%;                /* Night Courtyard Stone #261F3A */
+    --muted-foreground: 274 16% 71%;     /* Lavender-Silver Mist #B4AAC4 */
+
+    --accent: 338 38% 23%;               /* Dusk Lantern Rose #51253B */
+    --accent-foreground: 332 24% 95%;
+
+    --destructive: 0 64% 52%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 266 26% 25%;               /* Soft Twilight Rim #3C2F52 */
+    --input: 256 30% 16%;                /* Twilight Indigo Input #211B35 */
+    --ring: 340 72% 76%;
+
+    /* ── Dreamverse Night World Palette Tokens ── */
+    --dream-blossom: 340 76% 76%;
+    --dream-lavender: 262 66% 78%;
+    --dream-sky: 222 58% 68%;
+    --dream-mint: 158 42% 60%;
+    --dream-peach: 24 72% 76%;
+    --dream-gold: 34 88% 70%;            /* Warm Paper Lantern Amber #F5B971 */
+    --dream-timber: 25 32% 38%;
+    --dream-night: 254 36% 9%;
+
+    --chart-1: 340 72% 76%;
+    --chart-2: 262 66% 76%;
+    --chart-3: 34 88% 70%;
+    --chart-4: 158 42% 60%;
+    --chart-5: 205 64% 70%;
+
+    --sidebar-background: 254 34% 12%;   /* Lacquered Pavilion Sidebar #181329 */
+    --sidebar-foreground: 332 24% 95%;
+    --sidebar-primary: 340 72% 76%;
+    --sidebar-primary-foreground: 262 38% 11%;
+    --sidebar-accent: 338 34% 21%;
+    --sidebar-accent-foreground: 332 24% 95%;
+    --sidebar-border: 266 26% 23%;
+    --sidebar-ring: 340 72% 76%;
+
+    --knowledge-link: 340 76% 78%;
+    --surface: 255 32% 13%;
+    --surface-hover: 262 32% 20%;
+    --surface-active: 338 34% 24%;
+
+    --shadow-card:
+      0 2px 6px rgba(10, 6, 20, 0.42),
+      0 18px 42px -12px rgba(10, 6, 26, 0.72),
+      inset 0 1px 0 rgba(239, 149, 180, 0.14);
+    --shadow-hover:
+      0 6px 16px rgba(10, 6, 20, 0.5),
+      0 24px 52px -12px rgba(181, 156, 226, 0.2),
+      inset 0 1px 0 rgba(245, 185, 113, 0.24);
+    --accent-text-gradient: linear-gradient(118deg, #F8B1CA 0%, #D8BAFA 50%, #F5B971 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    direction: ltr !important;
+  }
+
+  html,
+  body {
+    direction: ltr !important;
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    transition: background-color 320ms var(--ease-botanical), color 240ms var(--ease-botanical);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.022em;
+  }
+
+  input,
+  textarea,
+  [contenteditable] {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: plaintext !important;
+  }
+}
+
+@layer utilities {
+  .ltr-input {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: plaintext !important;
+  }
+
+  .ltr-force {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+
+  /* ── Interactive Knowledge Link ── */
+  .knowledge-link {
+    position: relative;
+    color: hsl(var(--knowledge-link));
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.05em 0.24em;
+    margin: 0 -0.1em;
+    border-radius: 0.3rem;
+    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--dream-lavender)));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1.5px;
+    transition:
+      background-color var(--dur-fast) var(--ease-tactile),
+      background-size var(--dur-std) var(--ease-botanical),
+      opacity var(--dur-fast) ease;
+  }
+
+  .knowledge-link:hover {
+    background-color: hsl(var(--primary) / 0.14);
+    background-size: 100% 2px;
+  }
+
+  /* ── Luxury Multi-Material Crystal & Lacquer Glass System ── */
+
+  .glass-lavender {
+    background:
+      radial-gradient(120% 90% at 12% 0%, rgba(255, 255, 255, 0.56), transparent 52%),
+      linear-gradient(148deg, hsl(264 52% 96% / 0.62) 0%, hsl(276 46% 93% / 0.50) 54%, hsl(340 55% 95% / 0.54) 100%);
+    backdrop-filter: blur(18px) saturate(162%);
+    -webkit-backdrop-filter: blur(18px) saturate(162%);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    box-shadow:
+      0 4px 16px -4px rgba(102, 76, 152, 0.14),
+      0 20px 44px -14px rgba(84, 58, 128, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.82),
+      inset 0 -1px 0 rgba(181, 156, 226, 0.24);
+    transition:
+      background var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .glass-lavender {
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(216, 186, 250, 0.16), transparent 55%),
+      radial-gradient(80% 70% at 90% 95%, rgba(245, 185, 113, 0.08), transparent 55%),
+      linear-gradient(148deg, rgba(46, 33, 74, 0.56) 0%, rgba(30, 22, 52, 0.46) 55%, rgba(42, 24, 58, 0.52) 100%);
+    border-color: rgba(216, 186, 250, 0.24);
+    box-shadow:
+      0 6px 20px -4px rgba(8, 5, 18, 0.46),
+      0 24px 56px -14px rgba(18, 10, 38, 0.58),
+      inset 0 1px 0 rgba(236, 220, 255, 0.22),
+      inset 0 0 24px rgba(181, 156, 226, 0.06);
+  }
+
+  .glass-sakura {
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(255, 255, 255, 0.62), transparent 50%),
+      linear-gradient(150deg, hsl(345 64% 97% / 0.60) 0%, hsl(340 54% 94% / 0.46) 60%, hsl(32 60% 96% / 0.52) 100%);
+    backdrop-filter: blur(16px) saturate(165%);
+    -webkit-backdrop-filter: blur(16px) saturate(165%);
+    border: 1px solid rgba(255, 240, 246, 0.72);
+    box-shadow:
+      0 4px 14px -3px rgba(140, 62, 92, 0.12),
+      0 18px 40px -12px rgba(162, 74, 108, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      inset 0 -1px 0 rgba(244, 167, 193, 0.28);
+    transition:
+      background var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .glass-sakura {
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(244, 167, 193, 0.16), transparent 52%),
+      linear-gradient(150deg, rgba(56, 28, 52, 0.52) 0%, rgba(36, 22, 46, 0.42) 58%, rgba(48, 28, 56, 0.48) 100%);
+    border-color: rgba(244, 167, 193, 0.24);
+    box-shadow:
+      0 6px 20px -4px rgba(10, 5, 18, 0.44),
+      0 20px 48px -12px rgba(24, 10, 30, 0.56),
+      inset 0 1px 0 rgba(255, 214, 228, 0.22),
+      inset 0 0 20px rgba(239, 149, 180, 0.06);
+  }
+
+  .glass-pearl {
+    background:
+      radial-gradient(110% 80% at 12% 0%, rgba(255, 255, 255, 0.74), transparent 54%),
+      linear-gradient(155deg, rgba(255, 252, 249, 0.72) 0%, rgba(252, 245, 248, 0.60) 60%, rgba(246, 241, 252, 0.64) 100%);
+    backdrop-filter: blur(18px) saturate(155%);
+    -webkit-backdrop-filter: blur(18px) saturate(155%);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    box-shadow:
+      0 4px 16px -4px rgba(58, 34, 42, 0.08),
+      0 22px 48px -14px rgba(122, 68, 92, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    transition:
+      background var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .glass-pearl {
+    background:
+      radial-gradient(110% 80% at 15% 0%, rgba(255, 236, 246, 0.13), transparent 54%),
+      linear-gradient(155deg, rgba(38, 30, 62, 0.64) 0%, rgba(26, 21, 46, 0.54) 60%, rgba(34, 26, 56, 0.58) 100%);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 8px 24px -6px rgba(6, 4, 14, 0.54),
+      0 26px 58px -14px rgba(12, 8, 28, 0.68),
+      inset 0 1px 0 rgba(255, 232, 244, 0.2);
+  }
+
+  .glass-night {
+    background:
+      radial-gradient(100% 70% at 50% 0%, rgba(255, 255, 255, 0.52), transparent 55%),
+      linear-gradient(180deg, rgba(250, 244, 246, 0.66) 0%, rgba(242, 236, 248, 0.54) 100%);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.66);
+    box-shadow:
+      0 6px 24px -6px rgba(48, 28, 42, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition:
+      background var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .glass-night {
+    background:
+      radial-gradient(100% 70% at 30% 0%, rgba(181, 156, 226, 0.13), transparent 56%),
+      radial-gradient(80% 60% at 85% 92%, rgba(245, 185, 113, 0.08), transparent 55%),
+      linear-gradient(180deg, rgba(22, 17, 39, 0.62) 0%, rgba(16, 12, 30, 0.50) 100%);
+    border-color: rgba(206, 184, 244, 0.18);
+    box-shadow:
+      0 10px 30px -6px rgba(4, 2, 12, 0.62),
+      inset 0 1px 0 rgba(245, 185, 113, 0.16);
+  }
+
+  /* ── Semantic Glass Surface Mappings ── */
+
+  /* Crystal Shoji Surface (Landing Hero, Overview Cards, Modals) */
+  .dreamverse-shoji,
+  .botanical-surface {
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(255, 255, 255, 0.58), transparent 50%),
+      linear-gradient(150deg, hsl(345 64% 97% / 0.58) 0%, hsl(270 46% 94% / 0.46) 60%, hsl(32 60% 96% / 0.52) 100%);
+    backdrop-filter: blur(18px) saturate(162%);
+    -webkit-backdrop-filter: blur(18px) saturate(162%);
+    border: 1px solid rgba(255, 245, 249, 0.72);
+    box-shadow:
+      0 4px 16px -4px rgba(122, 68, 92, 0.12),
+      0 20px 44px -14px rgba(102, 76, 152, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85),
+      inset 0 -1px 0 rgba(244, 167, 193, 0.24);
+    transition:
+      background var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical),
+      transform var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .dreamverse-shoji,
+  .dark .botanical-surface {
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(244, 167, 193, 0.14), transparent 54%),
+      linear-gradient(150deg, rgba(48, 30, 62, 0.54) 0%, rgba(30, 22, 50, 0.44) 60%, rgba(42, 26, 56, 0.50) 100%);
+    border-color: rgba(244, 167, 193, 0.22);
+    box-shadow:
+      0 6px 22px -5px rgba(8, 5, 18, 0.48),
+      0 22px 50px -14px rgba(14, 8, 30, 0.60),
+      inset 0 1px 0 rgba(255, 222, 236, 0.22),
+      inset 0 0 22px rgba(181, 156, 226, 0.06);
+  }
+
+  .botanical-surface-elevated {
+    background:
+      radial-gradient(110% 80% at 12% 0%, rgba(255, 255, 255, 0.72), transparent 54%),
+      linear-gradient(155deg, rgba(255, 252, 249, 0.68) 0%, rgba(250, 242, 248, 0.56) 58%, rgba(244, 238, 252, 0.62) 100%);
+    backdrop-filter: blur(20px) saturate(165%);
+    -webkit-backdrop-filter: blur(20px) saturate(165%);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    box-shadow:
+      0 6px 20px -4px rgba(122, 68, 92, 0.15),
+      0 26px 56px -14px rgba(102, 76, 152, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 -1px 0 rgba(244, 167, 193, 0.28);
+  }
+
+  .dark .botanical-surface-elevated {
+    background:
+      radial-gradient(110% 80% at 14% 0%, rgba(245, 185, 113, 0.14), transparent 48%),
+      radial-gradient(90% 80% at 88% 95%, rgba(216, 186, 250, 0.14), transparent 52%),
+      linear-gradient(155deg, rgba(42, 32, 68, 0.62) 0%, rgba(28, 21, 50, 0.50) 60%, rgba(38, 26, 60, 0.58) 100%);
+    border-color: rgba(244, 167, 193, 0.28);
+    box-shadow:
+      0 8px 26px -6px rgba(6, 4, 14, 0.56),
+      0 28px 64px -14px rgba(181, 156, 226, 0.24),
+      inset 0 1px 0 rgba(255, 232, 244, 0.24),
+      inset 0 0 24px rgba(239, 149, 180, 0.08);
+  }
+
+  /* Translucent Lacquer Navigation Sidebar Rail */
+  .dreamverse-pavilion-rail {
+    background:
+      radial-gradient(100% 60% at 50% 0%, rgba(255, 255, 255, 0.52), transparent 55%),
+      linear-gradient(180deg, rgba(252, 246, 248, 0.62) 0%, rgba(244, 238, 250, 0.50) 100%);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow:
+      inset -1px 0 0 rgba(255, 255, 255, 0.65),
+      inset 0 1px 0 rgba(255, 255, 255, 0.78),
+      8px 0 36px -10px rgba(68, 42, 62, 0.14);
+  }
+
+  .dark .dreamverse-pavilion-rail {
+    background:
+      radial-gradient(100% 60% at 25% 0%, rgba(181, 156, 226, 0.14), transparent 58%),
+      radial-gradient(80% 60% at 85% 92%, rgba(245, 185, 113, 0.08), transparent 58%),
+      linear-gradient(180deg, rgba(24, 18, 42, 0.58) 0%, rgba(16, 12, 30, 0.48) 100%);
+    box-shadow:
+      inset -1px 0 0 rgba(216, 186, 250, 0.16),
+      inset 0 1px 0 rgba(245, 185, 113, 0.18),
+      10px 0 38px -10px rgba(6, 4, 16, 0.58);
+  }
+
+  /* Pearl Crystal Writing Sheet (Active Editor Surface) */
+  .dreamverse-manuscript {
+    background:
+      radial-gradient(110% 70% at 15% 0%, rgba(255, 255, 255, 0.68), transparent 55%),
+      linear-gradient(160deg, rgba(255, 253, 250, 0.76) 0%, rgba(252, 246, 249, 0.68) 65%, rgba(247, 243, 253, 0.72) 100%);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    box-shadow:
+      0 6px 24px -4px rgba(56, 30, 44, 0.10),
+      0 26px 60px -16px rgba(132, 66, 98, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  }
+
+  .dark .dreamverse-manuscript {
+    background:
+      radial-gradient(110% 70% at 15% 0%, rgba(244, 167, 193, 0.11), transparent 52%),
+      linear-gradient(160deg, rgba(32, 25, 54, 0.70) 0%, rgba(22, 17, 40, 0.62) 65%, rgba(30, 22, 48, 0.66) 100%);
+    border-color: rgba(244, 167, 193, 0.22);
+    box-shadow:
+      0 8px 30px -6px rgba(6, 4, 14, 0.62),
+      0 28px 64px -16px rgba(10, 6, 22, 0.72),
+      inset 0 1px 0 rgba(255, 228, 240, 0.20),
+      inset 0 0 28px rgba(181, 156, 226, 0.05);
+  }
+
+  /* Translucent Folder Tile */
+  .dreamverse-archive-box {
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    background:
+      linear-gradient(135deg, rgba(255, 252, 250, 0.52) 0%, rgba(247, 240, 250, 0.36) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  }
+
+  .dark .dreamverse-archive-box {
+    border-color: rgba(216, 186, 250, 0.16);
+    background:
+      linear-gradient(135deg, rgba(44, 34, 72, 0.46) 0%, rgba(28, 21, 50, 0.34) 100%);
+    box-shadow: inset 0 1px 0 rgba(245, 185, 113, 0.14);
+  }
+
+  /* Translucent Sakura Note Card */
+  .dreamverse-washi-slip {
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    background:
+      linear-gradient(135deg, rgba(255, 253, 251, 0.54) 0%, rgba(250, 242, 247, 0.38) 100%);
+    box-shadow:
+      0 2px 6px rgba(42, 24, 34, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    transition:
+      transform var(--dur-fast) var(--ease-tactile),
+      border-color var(--dur-fast) ease,
+      background var(--dur-fast) ease,
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+
+  .dark .dreamverse-washi-slip {
+    border-color: rgba(244, 167, 193, 0.16);
+    background:
+      linear-gradient(135deg, rgba(46, 32, 66, 0.46) 0%, rgba(30, 22, 48, 0.34) 100%);
+    box-shadow:
+      0 2px 8px rgba(6, 4, 16, 0.36),
+      inset 0 1px 0 rgba(239, 149, 180, 0.14);
+  }
+
+  /* Amethyst Crystal AI Brain Panel */
+  .dreamverse-oracle-sanctuary {
+    background:
+      radial-gradient(circle at 85% 6%, hsl(var(--dream-lavender) / 0.22), transparent 46%),
+      radial-gradient(circle at 15% 88%, hsl(var(--dream-gold) / 0.12), transparent 48%),
+      linear-gradient(180deg, rgba(248, 244, 253, 0.64) 0%, rgba(244, 238, 250, 0.52) 100%);
+    backdrop-filter: blur(20px) saturate(165%);
+    -webkit-backdrop-filter: blur(20px) saturate(165%);
+    box-shadow:
+      inset 1px 0 0 rgba(255, 255, 255, 0.72),
+      -8px 0 36px -10px rgba(84, 58, 128, 0.14);
+  }
+
+  .dark .dreamverse-oracle-sanctuary {
+    background:
+      radial-gradient(circle at 85% 6%, rgba(216, 186, 250, 0.16), transparent 46%),
+      radial-gradient(circle at 15% 88%, rgba(245, 185, 113, 0.10), transparent 48%),
+      linear-gradient(180deg, rgba(28, 21, 50, 0.60) 0%, rgba(20, 14, 38, 0.50) 100%);
+    box-shadow:
+      inset 1px 0 0 rgba(216, 186, 250, 0.18),
+      -10px 0 38px -10px rgba(6, 4, 16, 0.58);
+  }
+
+  /* ── Editorial & Seal Badge ── */
+  .botanical-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0.28rem 0.78rem;
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.13), hsl(var(--dream-lavender) / 0.15));
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.28);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+  }
+
+  /* ── Direction-Aware Specular Spotlight Card ── */
+  .botanical-spotlight-card {
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --spotlight-opacity: 0;
+    position: relative;
+    transition:
+      transform var(--dur-std) var(--ease-botanical),
+      box-shadow var(--dur-std) var(--ease-botanical),
+      border-color var(--dur-std) var(--ease-botanical);
+  }
+
+  .botanical-spotlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      360px circle at var(--pointer-x) var(--pointer-y),
+      hsl(var(--dream-gold) / 0.14),
+      hsl(var(--primary) / 0.08) 40%,
+      transparent 70%
+    );
+    opacity: var(--spotlight-opacity);
+    transition: opacity 260ms var(--ease-botanical);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .botanical-spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      260px circle at var(--pointer-x) var(--pointer-y),
+      hsl(var(--dream-gold) / 0.65),
+      hsl(var(--primary) / 0.45) 45%,
+      transparent 65%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: var(--spotlight-opacity);
+    transition: opacity 260ms var(--ease-botanical);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ── Flagship Silk Sheen Primary Action Surface ── */
+  .botanical-primary-sheen {
+    position: relative;
+    overflow: hidden;
+    background-color: hsl(var(--primary));
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary) / 0.9) 55%,
+      hsl(var(--dream-lavender) / 0.88) 100%
+    );
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.08),
+      0 8px 22px -6px hsl(var(--primary) / 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transition:
+      transform var(--dur-fast) var(--ease-tactile),
+      box-shadow var(--dur-std) var(--ease-botanical),
+      filter var(--dur-fast) ease;
+  }
+
+  .botanical-primary-sheen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.24) 50%,
+      transparent 100%
+    );
+    transform: skewX(-18deg);
+    transition: left 520ms var(--ease-botanical);
+    pointer-events: none;
+  }
+
+  .botanical-primary-sheen:hover:not(:disabled) {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.12),
+      0 12px 28px -5px hsl(var(--primary) / 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.36);
+    filter: brightness(1.04);
+  }
+
+  .botanical-primary-sheen:hover:not(:disabled)::after {
+    left: 145%;
+  }
+
+  .botanical-primary-sheen:active:not(:disabled) {
+    transform: translateY(1px) scale(0.985);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.14),
+      0 4px 10px -2px hsl(var(--primary) / 0.36);
+  }
+
+  /* ── Editorial Typographic Accent ── */
+  .botanical-accent-text {
+    background-image: var(--accent-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ── Tactile Press Helper ── */
+  .botanical-tactile {
+    transition:
+      transform var(--dur-fast) var(--ease-tactile),
+      background-color var(--dur-fast) ease,
+      border-color var(--dur-fast) ease,
+      box-shadow var(--dur-std) var(--ease-botanical);
+  }
+  .botanical-tactile:active:not(:disabled) {
+    transform: scale(0.985);
+  }
+
+  /* ── Refined Slim Botanical Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.25);
+    border-radius: 9999px;
+    transition: background var(--dur-std) ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* ── Dynamic Flagship Sakura Calligraphy Cursor Rules ── */
+  @media (pointer: fine) and (hover: hover) {
+    body.sakura-cursor-active,
+    .sakura-cursor-active a,
+    .sakura-cursor-active button,
+    .sakura-cursor-active [role="button"],
+    .sakura-cursor-active label,
+    .sakura-cursor-active select,
+    .sakura-cursor-active [data-cursor="grab"],
+    .sakura-cursor-active .cursor-pointer {
+      cursor: none !important;
+    }
+
+    /* Native crisp text I-beam over all editable regions */
+    .sakura-cursor-active input,
+    .sakura-cursor-active textarea,
+    .sakura-cursor-active [contenteditable],
+    .sakura-cursor-active [contenteditable="true"],
+    .sakura-cursor-active .block-editor-content,
+    .sakura-cursor-active .ProseMirror {
+      cursor: text !important;
+    }
+
+    .sakura-cursor-active button:disabled,
+    .sakura-cursor-active [aria-disabled="true"] {
+      cursor: not-allowed !important;
+    }
+  }
+
+  /* ── Accessibility: Complete Reduced-Motion Protection ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .botanical-primary-sheen::after {
+      display: none !important;
+    }
+    .botanical-spotlight-card::before,
+    .botanical-spotlight-card::after {
+      display: none !important;
+    }
+    .animate-spin,
+    .animate-bounce,
+    .animate-pulse {
+      animation: none !important;
+    }
+  }
+}
