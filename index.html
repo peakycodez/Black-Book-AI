@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackBook — Where Ideas Become Knowledge</title>
+    <meta name="description" content="BlackBook is an AI-powered personal knowledge system. Capture ideas, build layered knowledge links, and let AI surface connections you missed." />
+    <meta name="theme-color" content="#0B0B0F" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BlackBook" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="BlackBook — Where Ideas Become Knowledge" />
+    <meta property="og:description" content="AI-powered personal knowledge system with layered knowledge links, media support, and intelligent analysis." />
+
+    <!-- Icons -->
+    <link rel="icon"             type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit for Handcrafted Editorial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+    <script>
+      try {
+        if (localStorage.getItem('blackbook-theme') === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    </script>
+    <style>
+      /* Critical LTR enforcement at browser level */
+      * { direction: ltr !important; }
+      html, body { direction: ltr !important; }
+      input, textarea, [contenteditable] {
+        direction: ltr !important;
+        unicode-bidi: plaintext !important;
+        text-align: left !important;
+      }
+    </style>
+  </head>
+  <body dir="ltr">
+    <div id="root" dir="ltr"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
